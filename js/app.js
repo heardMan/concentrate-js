@@ -189,7 +189,9 @@ const win = () => {
     game.stopTimer();
     const gameModal = document.getElementById("gameModal");
     document.getElementById("end-time").innerHTML = document.getElementById("gameTimer").innerHTML;
+    document.getElementById("end-moves").innerHTML = document.getElementById("moves").innerHTML;
     document.getElementById("end-rating").innerHTML = document.getElementById("rating").innerHTML;
+    document.getElementById("end-rating").classList.add("stars");
     gameModal.classList.remove("hide");
 }
 
@@ -303,3 +305,18 @@ function shuffle(array) {
 document.addEventListener('DOMContentLoaded', function () {
     init();
 });
+
+/**
+ "feat: main game functionality
+ -implemented card flipping functionalty
+ -implemented moves counter
+ -implemented timer
+ -implemented reset button
+ -implemented random icons for each
+ -implemented user rating system based on moves
+ -game should be fully functional with no glaring bugs
+
+ NOTE: game style still requires mobile responsiveness
+ " 
+ 
+ */
