@@ -27,6 +27,7 @@ const game = {
     stopTimer: function () {
         clearInterval(this.intervalId)
     },
+    //formats time to the HH:MM style of time where H is hours and M is minutes
     formattedTimer: function () {
         game.time++;
         const minutes = (game.time / 60).toString()[0];
@@ -36,6 +37,8 @@ const game = {
         document.getElementById("gameTimer").innerHTML = formattedTime;
     }
 }
+
+//object containing cards with their metadata
 
 const cards = {
     all: [
@@ -79,15 +82,15 @@ const cards = {
 
 const createDeck = () => {
     //here we are adding card pairs based on the difficulty
-    
+
     for (let i = 0; i < game.difficulty;) {
-        //add 2 cards to the deck
+        //add a pair cards to the deck
         let randomNum = Math.floor(Math.random() * 26);
-        if(game.deck.indexOf(cards.all[randomNum]) === -1){
+        if (game.deck.indexOf(cards.all[randomNum]) === -1) {
             game.deck.push(cards.all[randomNum], cards.all[randomNum]);
             i++;
         }
-        
+
     }
 
 }
@@ -142,31 +145,40 @@ const select = e => {
         game.moves++;
         //update the game variable on screen
         document.getElementById("moves").textContent = game.moves;
-        setRating();
+
     }
 }
 
+//sets a user's star rating based on the number of moves they make
 const setRating = () => {
+
     const starElem = `<li><i class="fa fa-star"></i></li>`;
     const ratingElem = document.getElementById("rating");
 
-    if (game.moves < 16) {
+    if (game.moves < 25) {
+        //set 5 stars
         ratingElem.innerHTML = starElem + starElem + starElem + starElem + starElem;
-    } else if (game.moves < 24) {
+    } else if (game.moves < 30) {
+        //set 4 stars
+        ratingElem.innerHTML = starElem + starElem + starElem + starElem;
+    } else if (game.moves < 35) {
+        //set 3 stars
         ratingElem.innerHTML = starElem + starElem + starElem;
-    } else if (game.moves < 32) {
-        ratingElem.innerHTML = starElem + starElem;
     } else if (game.moves < 40) {
-        ratingElem.innerHTML = starElem;
+        //set 2 stars
+        ratingElem.innerHTML = starElem + starElem;
     } else {
-        ratingElem.innerHTML = "";
+        ratingElem.innerHTML = starElem;
     }
 }
 
+//evaluates current game state for winning condition
 const checkWin = () => {
+
     const cardElems = document.getElementById("deck").children;
     const matchElems = [];
     const matchNames = [];
+
     //loop through each card 
     for (let i = 0; i < cardElems.length; i++) {
         const card = cardElems[i];
@@ -179,15 +191,19 @@ const checkWin = () => {
         if (exists === -1) matchNames.push(match.children[0].classList.value);
     })
 
+    //if all the cards have been matched run win function else set rating
     if (matchNames.length === game.difficulty) {
-        console.log("YOU WINNN");
         win();
+    } else {
+        setRating();
     }
 }
 
+//initiates game win logic
 const win = () => {
     game.stopTimer();
     const gameModal = document.getElementById("gameModal");
+    //set modal stats component data
     document.getElementById("end-time").innerHTML = document.getElementById("gameTimer").innerHTML;
     document.getElementById("end-moves").innerHTML = document.getElementById("moves").innerHTML;
     document.getElementById("end-rating").innerHTML = document.getElementById("rating").innerHTML;
@@ -195,6 +211,7 @@ const win = () => {
     gameModal.classList.remove("hide");
 }
 
+// evaluates user selection(s)
 const compareCards = (currentSelection) => {
     if (game.previousSelection !== "") {
         const cardOne = game.previousSelection;
@@ -220,6 +237,7 @@ const compareCards = (currentSelection) => {
     }
 }
 
+//unflips a pair of selected cards
 const unflipCards = (cardOne, cardTwo) => {
     console.log(cardTwo);
     setTimeout(() => {
@@ -228,6 +246,7 @@ const unflipCards = (cardOne, cardTwo) => {
     }, 1000)
 }
 
+//game restart logic
 const setRestartButton = () => {
     document.getElementById("restart").addEventListener("click", e => {
         document.getElementById("deck").innerHTML = "";
@@ -239,19 +258,25 @@ const setRestartButton = () => {
     })
 }
 
+//this function initiates game play logic
 const play = () => {
+    //remove play button
     if (document.getElementById("play-button") !== null) document.getElementById("play-button").remove();
-    document.getElementById("deck").innerHTML="";
+    document.getElementById("deck").innerHTML = "";
     //reset the game obj data just in case there is data from a previous game
     game.deck = [];
     game.matches = 0;
     game.moves = 0;
     game.previousSelection = "";
     document.getElementById("moves").innerHTML = game.moves;
-    createDeck();
-    dealCards();
     setRestartButton();
+    setRating();
     game.setTimer();
+    //create new random deck
+    createDeck();
+    //add card to screen
+    dealCards();
+    
 }
 
 const init = () => {
@@ -305,18 +330,3 @@ function shuffle(array) {
 document.addEventListener('DOMContentLoaded', function () {
     init();
 });
-
-/**
- "feat: main game functionality
- -implemented card flipping functionalty
- -implemented moves counter
- -implemented timer
- -implemented reset button
- -implemented random icons for each
- -implemented user rating system based on moves
- -game should be fully functional with no glaring bugs
-
- NOTE: game style still requires mobile responsiveness
- " 
- 
- */

@@ -1,13 +1,12 @@
 body {
-    
     margin: 0;
     padding: 0;
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
+    min-width: 250px;
 }
 
 .container {
-    
     padding: 1em;
 }
 
@@ -25,11 +24,9 @@ h1 {
  */
 
 .deck {
-    /* width: 100%; */
-    min-height: 300px; 
+    min-height: 300px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 37px 37px 22px 37px;
-    
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
@@ -39,11 +36,8 @@ h1 {
     align-items: center;
     margin-right:auto;
     margin-left:auto;
-    max-width: 295px;  
-    
-    
+    max-width: 295px;
 }
-
 
 .deck .card {
     height: 50px;
@@ -56,30 +50,24 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0px 10px 10px; 
-    
+    margin: 10px 0px 10px 10px;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-    
-    
 }
 
 .deck .card.open {
     transform: rotateY(0);
     background: #02b3e4;
     cursor: default;
-    
 }
 
 .deck .card.show {
     font-size: 33px;
-   
 }
 
 .deck .card.match {
     cursor: default;
     background: #02ccba;
     font-size: 33px;
-   
 }
 
 /*
@@ -88,8 +76,6 @@ h1 {
 
 .score-panel {
     width: 100%;
-    
-
 }
 
 .score-panel .stars {
@@ -97,7 +83,7 @@ h1 {
     margin: 0;
     padding: 0;
     display: inline-block;
-    margin: 0 5px 0 0;
+    margin: 0px 5px 0px 0px;
 }
 
  .stars li {
@@ -109,10 +95,12 @@ h1 {
     width: 100%;
     cursor: pointer;
 }
+
 .score-panel .timer {
     width: 100%;
     cursor: pointer;
 }
+
 .score-panel .restart {
     width: 100%;
     cursor: pointer;
@@ -134,8 +122,8 @@ h1 {
 
 .button:hover {
     transform: scale(1.05);
-    
 }
+
 .button:active {
     transform: scale(0.95);
     box-shadow: 0px 0px 0px 0 #2e3d49;
@@ -159,8 +147,8 @@ h1 {
     border: none;
     border-radius: 10px;
     text-align: center;
-    
 }
+
 .scoreComponent{
     text-align: center;
     margin: 0 auto 0 auto;
@@ -186,16 +174,16 @@ h1 {
     top: 10%;
     left: 10%;
     width: 80%;
-    min-height: 80%;
     border-radius: 10px;
     background: #efefef;
-    
 }
+
 .modal-header{
     border: solid;
     border-color: #6c7a89;
     border-width: 0px 0px 1px 0px;
 }
+
 .modal-title{
     text-align: center;
     margin-left: auto;
@@ -213,7 +201,7 @@ h1 {
 .modal-footer{
     display: flex;
     align-content: center;
-    padding: 1.5em 0em 1.5em 0em;
+    padding: 1.5em 0.5em 1.5em 0.5em;
     width: 100%;
     border: solid;
     border-width: 1px 0px 0px 0px;
@@ -231,20 +219,23 @@ h1 {
     justify-content: space-between;
     text-align: center;
 }
-#win-message{
+
+#win-message {
     width:100%;
-    
 }
-#final-stats-container{
+
+#final-stats-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-#final-time{
+
+#final-time {
     width: 100%;
     padding: 1.0em;
     flex: 1;
 }
+
 #final-rating{
     width: 100%;
     padding: 1.0em;
@@ -261,82 +252,75 @@ h1 {
     margin-bottom: 0;
  }
 
- /* @media only screen and (min-width: 351px) {
-     #final-moves #final-rating #final-time{
-         width:100%;
-     }
- } */
-
 @media only screen and (min-width: 351px) {
+
     .deck {
-        max-width: 275px;  
+        max-width: 275px;
         padding: 27px 27px 12px 27px;
     }
+
     .deck .card {
         height: 50px;
         width: 50px;
-        margin: 0px 5px 10px 5px; 
-        
+        margin: 0px 5px 10px 5px;
     }
 
     .final-stat-title{
        padding: 1em 0em 1em 0em;
     }
     
-
   }
 
   @media only screen and (min-width: 367px) {
+
     #final-stats-container{
         display: flex;
         width: 100%;
-        justify-content: space-between
-        
+        justify-content: space-between;
     }
+
     #final-time{
         width: 33%;
         padding: 1.0em;
         margin: 0px;
-        
-       
     }
+
     #final-rating{
         width: 33%;
         padding: 1.0em;
         margin: 0px;
-        
     }
     
     #final-moves{
         width: 33%;
         padding: 1.0em;
         margin: 0px;
-        
     }
+
   }
 
   @media only screen and (min-width: 416px) {
+
     .deck {
-        max-width: 335px;  
+        max-width: 335px;
         padding: 37px 37px 22px 37px;
     }
+
     .deck .card {
         height: 70px;
         width: 70px;
         margin-bottom: 10px;
-        margin: 0px 0px 10px 0px; 
+        margin: 0px 0px 10px 0px;
     }
-  }
 
-  @media only screen and (min-width: 425px) {
-    
-   
   }
 
 @media only screen and (min-width: 521px) {
+
     .deck {
-        max-width: 395px;  
+        max-width: 395px;
     }
+
     .deck .card {
         height: 90px;
         width: 90px;
@@ -345,20 +329,14 @@ h1 {
   }
 
   @media only screen and (min-width: 661px) {
+
     .deck {
-        max-width: 535px;  
+        max-width: 535px;
     }
+
     .deck .card {
         height: 125px;
         width: 125px;
     }
+
   }
-
-
-  /* asd
-  
-  "type: responsive styling
-
-added meta tags for device scaling"
-  
-  */

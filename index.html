@@ -1,77 +1,94 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Matching Game</title>
     <meta name="description" content="">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
-    <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
 </head>
-<body>
 
+<body>
+    <!-- main container -->
     <div class="container">
-        <div >
+        <!-- title container -->
+        <div>
             <h1 id="game-title">Matching Game</h1>
         </div>
-
+        <!-- score panel -->
         <section class="score-panel">
+
             <div class="scoreComponent">
-        	<ul id="rating" class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-                <li><i class="fa fa-star"></i></li>
-        	</ul>
-        </div>
-        	<div  class="scoreComponent"> Moves : <span id="moves">0</span></div> 
-            <div  class="scoreComponent">Timer: <span id="gameTimer">0:00</span></div>
+                <!-- rating component -->
+                <ul id="rating" class="stars">
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                </ul>
+            </div>
+            <!-- moves component -->
+            <div class="scoreComponent"> Moves : <span id="moves">0</span></div>
+            <!-- score component -->
+            <div class="scoreComponent">Timer: <span id="gameTimer">0:00</span></div>
+            <!-- restart button -->
             <div id="restart" class="scoreComponent">
                 <i class="fas fa-redo-alt"></i>
                 Reset
-        	</div>
+            </div>
         </section>
-
+        <!-- deck component -->
         <ul id="deck" class="deck"></ul>
-    </div>
 
-    <div id="gameModal" class="hide">
-        <div class="modal-content">
-        <div class="modal-header">
-            <span class="modal-title"><h2>Congrats!</h2></span>
-            <span  class="modal-close">
-                    <i id="modal-close" class="fas fa-times closeIcon"></i>
-            </span>
-        </div>
-        <div class="modal-body">
-            <div id="win-message"><h2>You Win!</h2></div>
-            <div id=final-stats-container>
-            <div id="final-time">
-                <h3 class="final-stat-title">Time</h3>
-                <div class="final-stat" id="end-time">Time</div>
-            </div>
-            <div id="final-moves">
-                    <h3 class="final-stat-title">Moves</h3>
-                <div class="final-stat" id="end-moves">Moves</div>
-            </div>
-            <div id="final-rating">
-                    <h3 class="final-stat-title">Rating</h3>
-                <div class="final-stat" id="end-rating">Rating</div>
-            </div>
-           </div>
-            
-        </div>
-        <div class="modal-footer">
-            <button id="playAgain" class="button">Play Again ?</button>
-        </div>
     </div>
+    <!-- win modal -->
+    <div id="gameModal" class="hide">
+        <!-- modal main content window -->
+        <div class="modal-content">
+            <!-- modal header -->
+            <div class="modal-header">
+                <span class="modal-title">
+                    <h2>Congrats!</h2>
+                </span>
+                <span class="modal-close">
+                    <i id="modal-close" class="fas fa-times closeIcon"></i>
+                </span>
+            </div>
+            <!-- modal body -->
+            <div class="modal-body">
+                <div id="win-message">
+                    <h2>You Win!</h2>
+                </div>
+                <div id=final-stats-container>
+                    <div id="final-time">
+                        <h3 class="final-stat-title">Time</h3>
+                        <div class="final-stat" id="end-time">Time</div>
+                    </div>
+                    <div id="final-moves">
+                        <h3 class="final-stat-title">Moves</h3>
+                        <div class="final-stat" id="end-moves">Moves</div>
+                    </div>
+                    <div id="final-rating">
+                        <h3 class="final-stat-title">Rating</h3>
+                        <div class="final-stat" id="end-rating">Rating</div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal footer -->
+            <div class="modal-footer">
+                <button id="playAgain" class="button">Play Again ?</button>
+            </div>
+        </div>
     </div>
 
     <script src="js/app.js"></script>
+
 </body>
+
 </html>
