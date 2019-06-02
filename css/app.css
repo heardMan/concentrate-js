@@ -109,7 +109,7 @@ h1 {
 .button{
     font-family: 'Open Sans', sans-serif;
     padding: 1em 1.5em 1em 1.5em;
-    font-size: 1.5rem;
+    font-size: 1em;
     background: #02ccba;
     color: #ffffff;
     font-weight: 900;
@@ -203,9 +203,6 @@ h1 {
     align-content: center;
     padding: 1.5em 0.5em 1.5em 0.5em;
     width: 100%;
-    border: solid;
-    border-width: 1px 0px 0px 0px;
-    border-color: #6c7a89;
 }
 
 .closeIcon{
@@ -218,6 +215,9 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     text-align: center;
+    border: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #6c7a89;
 }
 
 #win-message {
@@ -295,6 +295,14 @@ h1 {
         width: 33%;
         padding: 1.0em;
         margin: 0px;
+    }
+
+  }
+
+  @media only screen and (min-width: 367px) and (max-width: 517px) {
+
+    .fa-star{
+        font-size: 0.55em !important;
     }
 
   }

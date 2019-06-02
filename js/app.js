@@ -155,16 +155,16 @@ const setRating = () => {
     const starElem = `<li><i class="fa fa-star"></i></li>`;
     const ratingElem = document.getElementById("rating");
 
-    if (game.moves < 25) {
+    if (game.moves < 100) {
         //set 5 stars
         ratingElem.innerHTML = starElem + starElem + starElem + starElem + starElem;
-    } else if (game.moves < 30) {
+    } else if (game.moves < 101) {
         //set 4 stars
         ratingElem.innerHTML = starElem + starElem + starElem + starElem;
-    } else if (game.moves < 35) {
+    } else if (game.moves < 105) {
         //set 3 stars
         ratingElem.innerHTML = starElem + starElem + starElem;
-    } else if (game.moves < 40) {
+    } else if (game.moves < 111) {
         //set 2 stars
         ratingElem.innerHTML = starElem + starElem;
     } else {
