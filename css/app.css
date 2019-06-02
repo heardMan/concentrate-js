@@ -28,7 +28,7 @@ h1 {
     /* width: 100%; */
     min-height: 300px; 
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-    padding: 47px 47px 32px 47px;
+    padding: 37px 37px 22px 37px;
     
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -39,15 +39,15 @@ h1 {
     align-items: center;
     margin-right:auto;
     margin-left:auto;
-    max-width: 535px;
+    max-width: 295px;  
     
     
 }
 
 
 .deck .card {
-    height: 125px;
-    width: 125px;
+    height: 75px;
+    width: 75px;
     background: #2e3d49;
     font-size: 0;
     color: #ffffff;
@@ -56,50 +56,14 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
+    margin: 10px 0px 10px 10px; 
     
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
     
     
 }
 
-@media only screen and (max-width: 660px) {
-    .deck {
-        max-width: 395px;  
-    }
-    .deck .card {
-        height: 90px;
-        width: 90px;
-    }
-  }
-
-  @media only screen and (max-width: 520px) {
-    .deck {
-        max-width: 335px;  
-        padding: 37px 37px 22px 37px;
-    }
-    .deck .card {
-        height: 70px;
-        width: 70px;
-        margin-bottom: 10px;
-        
-    }
-  }
-
-  @media only screen and (max-width: 415px) {
-    .deck {
-        max-width: 275px;  
-        padding: 27px 27px 12px 27px;
-    }
-    .deck .card {
-        height: 100px;
-        width: 100px;
-        margin: 1px 0px 10px 1px; 
-        
-    }
-  }
-
-  @media only screen and (max-width: 350px) {
+/* @media only screen and (max-width: 350px) {
     .deck {
         max-width: 295px;  
         padding: 37px 37px 22px 37px;
@@ -110,7 +74,15 @@ h1 {
         margin: 10px 0px 10px 10px; 
         
     }
-  }
+  } */
+
+  
+
+  
+
+  
+
+  
 
 .deck .card.open {
     transform: rotateY(0);
@@ -290,5 +262,51 @@ h1 {
     padding: 1.5em;
     flex: 2;
 }
+
+@media only screen and (min-width: 351px) {
+    .deck {
+        max-width: 275px;  
+        padding: 27px 27px 12px 27px;
+    }
+    .deck .card {
+        height: 100px;
+        width: 100px;
+        margin: 1px 0px 10px 1px; 
+        
+    }
+  }
+
+  @media only screen and (min-width: 416px) {
+    .deck {
+        max-width: 335px;  
+        padding: 37px 37px 22px 37px;
+    }
+    .deck .card {
+        height: 70px;
+        width: 70px;
+        margin-bottom: 10px;
+        
+    }
+  }
+
+@media only screen and (min-width: 521px) {
+    .deck {
+        max-width: 395px;  
+    }
+    .deck .card {
+        height: 90px;
+        width: 90px;
+    }
+  }
+
+  @media only screen and (min-width: 661px) {
+    .deck {
+        max-width: 535px;  
+    }
+    .deck .card {
+        height: 125px;
+        width: 125px;
+    }
+  }
 
 
