@@ -43,26 +43,27 @@
     <div id="gameModal" class="hide">
         <div class="modal-content">
         <div class="modal-header">
-            <span class="modal-title"><h2>Congratulations!</h2></span>
-            <span id="modal-close" class="modal-close">
-                    <i class="fas fa-times closeIcon"></i>
+            <span class="modal-title"><h2>Congrats!</h2></span>
+            <span  class="modal-close">
+                    <i id="modal-close" class="fas fa-times closeIcon"></i>
             </span>
         </div>
         <div class="modal-body">
             <div id="win-message"><h2>You Win!</h2></div>
+            <div id=final-stats-container>
             <div id="final-time">
-                <h3>Final Time</h3>
-                <div id="end-time">Time</div>
+                <h3 class="final-stat-title">Time</h3>
+                <div class="final-stat" id="end-time">Time</div>
             </div>
             <div id="final-moves">
-                    <h3>Total Moves</h3>
-                <div id="end-moves">Rating</div>
+                    <h3 class="final-stat-title">Moves</h3>
+                <div class="final-stat" id="end-moves">Moves</div>
             </div>
             <div id="final-rating">
-                    <h3>Rating</h3>
-                <div id="end-rating">Rating</div>
+                    <h3 class="final-stat-title">Rating</h3>
+                <div class="final-stat" id="end-rating">Rating</div>
             </div>
-           
+           </div>
             
         </div>
         <div class="modal-footer">
