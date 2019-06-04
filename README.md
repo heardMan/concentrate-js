@@ -1,6 +1,6 @@
 # concentrate-js
 
-#h2 Welcome to Concentrate JS!!!
+# H2 Welcome to Concentrate JS!!!
 
 Concentrate JS is technology based matching game.
 
