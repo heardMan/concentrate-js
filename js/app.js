@@ -155,16 +155,16 @@ const setRating = () => {
     const starElem = `<li><i class="fa fa-star"></i></li>`;
     const ratingElem = document.getElementById("rating");
 
-    if (game.moves < 100) {
+    if (game.moves < 16) {
         //set 5 stars
         ratingElem.innerHTML = starElem + starElem + starElem + starElem + starElem;
-    } else if (game.moves < 101) {
+    } else if (game.moves < 20) {
         //set 4 stars
         ratingElem.innerHTML = starElem + starElem + starElem + starElem;
-    } else if (game.moves < 105) {
+    } else if (game.moves < 24) {
         //set 3 stars
         ratingElem.innerHTML = starElem + starElem + starElem;
-    } else if (game.moves < 111) {
+    } else if (game.moves < 28) {
         //set 2 stars
         ratingElem.innerHTML = starElem + starElem;
     } else {
@@ -218,10 +218,7 @@ const compareCards = (currentSelection) => {
         const cardTwo = currentSelection;
         const cardOneIcon = cardOne.children[0].classList.toString();
         const cardTwoIcon = cardTwo.children[0].classList.toString();
-        console.log(`Card One: ${cardOne}`);
-        console.log(`Card Two: ${cardTwo}`);
         if (cardOneIcon === cardTwoIcon) {
-            console.log("its a match");
             cardOne.classList.remove("open", "show");
             cardTwo.classList.remove("open", "show");
             cardOne.classList.add("match");
@@ -233,13 +230,11 @@ const compareCards = (currentSelection) => {
         game.previousSelection = "";
     } else {
         game.previousSelection = currentSelection;
-        console.log(currentSelection);
     }
 }
 
 //unflips a pair of selected cards
 const unflipCards = (cardOne, cardTwo) => {
-    console.log(cardTwo);
     setTimeout(() => {
         cardOne.classList.remove("open", "show");
         cardTwo.classList.remove("open", "show");
@@ -261,10 +256,14 @@ const setRestartButton = () => {
 //this function initiates game play logic
 const play = () => {
     //remove play button
-    if (document.getElementById("play-button") !== null) document.getElementById("play-button").remove();
+    const playButton = document.getElementById("play-button");
+    //remove play button
+    if (playButton !== null) playButton.remove();
+    //ensure deck is clear of content 
     document.getElementById("deck").innerHTML = "";
     //reset the game obj data just in case there is data from a previous game
     game.deck = [];
+    game.time = 0;
     game.matches = 0;
     game.moves = 0;
     game.previousSelection = "";
