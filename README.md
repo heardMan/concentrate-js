@@ -4,7 +4,7 @@
 
 Concentrate JS is technology based matching game.
 
-![gif of game being played to completion](https://github.com/heardMan/concentrate-js/blob/master/img/demo.gif)
+<img src="url" alt="gif of game being played through to completion" width="250" height="250">
 
 Match *all* the tecnologies and you win!!!
 
